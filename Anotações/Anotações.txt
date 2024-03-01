@@ -1,0 +1,80 @@
+informações sobre Git e GitHug
+
+cd/ vai para pasta c
+cd c vai para pasta c
+cd .. retroceder
+cls limpar
+dir listar pasta
+rmdir /s q/ apagar diretorio
+del apagar arquivo
+mkdir criar pasta
+echo é um print do que vc escreveu
+sha1 (stdin)= conjunto de 40 caracteres
+openssl sha1
+ls listar
+pwd mostra o caminho completo da pasta
+
+objetos de direcionamento do git
+blobs - meta dados do objeto (tamanho do arquivo, da string)
+echo 'conteudo' passa para o git hash-objeto --stdin ele da o sha
+echo -e 'blob 9\conteudo' |opnssl sha1 (ele vai gerar o mesmo sha acima)
+
+trees - armazena os blobs e contem metadados e aponta para um blob e guarda o nome do arquivo. responsavel por montar a estrutura aonde esta os blobs. ela aponta para uma blob ou outra tree
+
+commits - junta tudo e da sentido para o que vc esta fazendo. ele aponta para arvore parente, autor e mensagem. timestamp leva a hora e data certinha de quando foi criado e tb possui um sha1 ( ele da o historico de tudo que foi realizado)
+
+git é um sistema distribuido e seguro
+
+chaves ssh e tokens
+comandos no git bash para gerar a chave ssh-keygen -t ed25519 -C e o seu email
+a chave que usa no github é a chave publica
+visualizar o conteudo da chave cat id_ed25519.pub e ao rodar ele mostra a chave publica
+agent pid eval $(ssh-agent -s) ele vai mostrar o agent pid e o numero do processo
+
+ssh-add id-ed25519 ele vai enviar para que depois todas as mensagem que vc receber ele possa discriptografar. essa chave que vai usar é a chave privada
+
+clonar - 
+git clone e a copia do ssh que vc pegou no code do github
+
+token de acesso pessoal - vai gerar um token no github e guardar na sua maquina mas é preferivel gerar chave ssh
+vai em developer sitting personal access tokens 
+
+primeiros cmandos com git
+
+criando um repositorio
+git init
+ls -a mostra o que tem dentro das pastas ocultas
+git add - mover arquivo e dar direcionamento
+git commit
+
+configuração inicial do git
+git config --global user.email 
+git config --global user.name 
+
+adicionando um arquivo
+usar um arquivo markdown pega um arquivo de texto e coloca .md no final o arquivo markdown e o html mais facil de escrever
+
+typora master
+#e o titulo e enter
+**negrito **
+_italico_
+da pra usar emogi :e o nome do emogi
+git add *
+git commit -m "commit inicial""
+
+ciclo de vida dos arquivos
+
+git status
+git add * mostra tudo pra status
+mv é para mover o arquivo para outra pasta que vc escolher
+
+git config --list mostr a qual o email e nickname vc esta usando
+git remote add origin e cola o link 
+git remote -v lista os repositorios que eu tenho
+git push origin master
+
+resolvendo conflitos
+git pull origin master para puxar a versão que esta no git hub e tentar atualizar o da sua maquina
+git commit -m "resolve conflitos" pos vc unificar os arquivos e faz um git push de novo
+
+
